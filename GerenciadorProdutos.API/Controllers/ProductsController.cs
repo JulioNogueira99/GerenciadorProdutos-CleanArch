@@ -41,10 +41,8 @@ namespace GerenciadorProdutos.API.Controllers
         [HttpPost]
         public async Task<IActionResult> Post(CreateProductInputModel model)
         {
-            // O Service cuida da criação e retorna o ID novo
             var id = await _service.Create(model);
 
-            // CreatedAtAction retorna 201 Created e coloca no Header a URL para consultar o novo item
             return CreatedAtAction(nameof(GetById), new { id = id }, model);
         }
     }

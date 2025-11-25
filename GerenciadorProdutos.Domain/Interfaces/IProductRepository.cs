@@ -12,6 +12,6 @@ namespace GerenciadorProdutos.Domain.Interfaces
         Task<List<Product>> GetAllAsync();
         Task<Product> GetByIdAsync(int id);
         Task AddAsync(Product product);
-        Task UpdateAsync(Product product); // O EF faz o tracking, mas é bom ter o método explícito no contrato
+        Task UpdateAsync(Product product);
     }
 }
