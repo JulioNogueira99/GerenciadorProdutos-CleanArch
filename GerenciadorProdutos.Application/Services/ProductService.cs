@@ -33,13 +33,10 @@ namespace GerenciadorProdutos.Application.Services
 
         public async Task<int> Create(CreateProductInputModel model)
         {
-            // 1. Converter InputModel para Entidade
             var product = new Product(model.Title, model.Price, model.Description);
 
-            // 2. Chamar o repositório (Infrastructure)
             await _repository.AddAsync(product);
 
-            // 3. Retornar o ID gerado
             return product.Id;
         }
     }
